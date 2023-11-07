@@ -17,20 +17,25 @@ playerOneBtn.addEventListener("click", () => {
 });
 
 playerTwoBtn.addEventListener("click", () => {
-  if (playerTwoInput.value > 0 && playerTwoInput.value < 10) {
+  if (playerTwoInput.value > 0 && playerTwoInput.value < 10 && count >= 0) {
     if (count > 0) {
       if (playerOneInput.value == playerTwoInput.value) {
-        para.style.color = "greenyeallow";
+        para.style.color = "greenyellow";
         para.innerHTML = "Congrats. <br> Reload the page to play again!";
+        count = -1;
       } else {
         para.style.color = "crimson";
         para.innerHTML = "Try again. <br> Remaining Chances:  " + count-- + ".";
       }
     } else {
       para.style.color = "crimson";
-      para.innerHTML = "Game over! <br> Reload the page to play again!";
+      para.innerHTML = "Game over! <br> Reload the page to play again.";
       count = 0;
     }
+  } else if (count == -1) {
+    para.style.color = "greenyellow";
+    para.innerHTML =
+      "You've won the game already! <br> Reload the page to play again.";
   } else {
     para.style.color = "crimson";
     para.innerHTML = "Please type a number between 1 to 9.";
