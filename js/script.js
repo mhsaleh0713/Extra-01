@@ -19,17 +19,18 @@ playerOneBtn.addEventListener("click", () => {
 })
 playerTwoBtn.addEventListener("click", () => {
     if (playerTwoInput.value > 0 && playerTwoInput.value < 10){
-       if (playerOneInput.value == playerTwoInput.value){
-        para.style.color = "greenyeallow"
-        para.innerHTML = "Congrats"
-        count = 0
-       }else if (count > 0){
-        para.style.color = "orange"
-        para.innerHTML = "Try again! <br> Remainin Chances: " + count-- + "."
-       }else{
-        para.innerHTML = "Game over! <br> Please reload the page to play again."
-        para.style.color = "crimson"
-       }
+       if (count > 0){
+               if (playerOneInput.value == playerTwoInput.value){
+            para.style.color = "greenyeallow"
+            para.innerHTML = "Congrats"
+            count = 0
+           }else if (count > 0){
+            para.style.color = "orange"
+            para.innerHTML = "Try again! <br> Remainin Chances: " + count-- + "."
+           }else{
+            para.innerHTML = "Game over! <br> Please reload the page to play again."
+            para.style.color = "crimson"
+           }
     }
     else {
         para.innerHTML = "Please Type a number between 1 to 9."
